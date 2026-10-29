@@ -17,4 +17,4 @@ jobs:
           sudo apt-get install -y python${{ matrix.version }}
 
       - name: Check Python version
-        run: python${{ matrix.version }} --version
+        run: python --version
