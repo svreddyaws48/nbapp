@@ -1,4 +1,4 @@
-name: Python Matrix Demo
+name: Python Matrix
 
 on: push
 
@@ -8,14 +8,9 @@ jobs:
 
     strategy:
       matrix:
-        version: ["3.10", "3.12"]
+        version: ["3.12", "3.13"]
 
     steps:
-      - name: Install Python
+      - name: Check Python
         run: |
-          sudo apt-get update
-          sudo apt-get install -y python${{ matrix.version }}
-          python --version
-
-      - name: Check Python version
-        run: python --version
+          python${{ matrix.version }} --version
